@@ -32,10 +32,10 @@ def news_from_lhv(news_page_name, page_url, pages, textfile):  # pages stands fo
                 link = container["href"]  # reference for full article
                 title = container.text.strip()  # title of article
                 date = date.text.strip().split("\r\n   ")
-                print(date)
                 f.writelines(date)
                 news = ("\n", title, "\n", link, "\n\n")
                 f.writelines(news)
+        print(news_page_name)
 
 
 # variable for the amount of pages scraped
@@ -56,3 +56,5 @@ news_from_lhv("Rahageenius", rahageenius_url, my_pages, "Rahageenius.txt")
 news_from_lhv("Postimees", postimees_url, my_pages, "Postimees.txt")
 news_from_lhv("Ärileht", arileht_url, my_pages, "Arileht.txt")
 news_from_lhv("Balti Börsid", balti_borsid_url, my_pages, "Balti_Borsid.txt")
+
+print("Done!")
